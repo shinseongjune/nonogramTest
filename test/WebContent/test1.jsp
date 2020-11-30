@@ -8,12 +8,35 @@
 </head>
 <style>
 table {
+	margin: 20px;
 	border-collapse: collapse;
 }
-td {
+.game_cell {
 	width: 40px;
 	height: 40px;
 	border: 1px solid black;
+}
+.top_hint {
+	width: 40px;
+	min-height: 40px;
+	border: 1px solid black;
+	border-bottom: 3px solid black;
+	border-top: 0px;
+}
+.left_hint {
+	min-width: 40px;
+	height: 40px;
+	border: 1px solid black;
+	border-right: 3px solid black;
+	border-left: 0px;
+}
+.top_hint.left_hint {
+	min-width: 40px;
+	min-height: 40px;
+	border-top: 0px;
+	border-left: 0px;
+	border-right: 1px solid black;
+	border-bottom: 1px solid black;
 }
 .on {
 	background: black;
@@ -38,9 +61,8 @@ td {
 			for(var i = 0; i <= b; i++) {
 				$("#map").children("tr").append("<td class='game_cell'></td>");				
 			}
-			$("#map tr:first-child>td").css({"border-bottom":"3px solid black"}).removeClass("game_cell");
-			$("#map tr td:first-child").css({"border-right":"3px solid black"}).removeClass("game_cell");
-			$("#map tr:first-child>td:first-child").css({"border":"1px solid black"});
+			$("#map tr:first-child>td").addClass("top_hint").removeClass("game_cell");
+			$("#map tr td:first-child").addClass("left_hint").removeClass("game_cell");
 		});
 		$(document).on("mousedown", ".game_cell", function(event) {
 		    switch (event.which) {

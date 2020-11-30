@@ -56,10 +56,10 @@ table {
 			var b = $('#colNum').val();
 			$("#map").empty();
 			for(var i = 0; i <= a; i++) {
-				$("#map").append("<tr></tr>");				
+				$("#map").append("<tr class='row" + i + "'></tr>");				
 			}
 			for(var i = 0; i <= b; i++) {
-				$("#map").children("tr").append("<td class='game_cell'></td>");				
+				$("#map").children("tr").append("<td class='game_cell col" + i + "'></td>");				
 			}
 			$("#map tr:first-child>td").addClass("top_hint").removeClass("game_cell");
 			$("#map tr td:first-child").addClass("left_hint").removeClass("game_cell");
@@ -89,8 +89,8 @@ table {
 </script>
 <body>
 
-	row : <input type="number" id="rowNum" />
-	col : <input type="number" id="colNum" />
+	row : <input type="number" id="rowNum" min="0" max="20" />
+	col : <input type="number" id="colNum" min="0" max="20" />
 	<input type="button" id="getTable" value="표 만들기" />
 	
 	<table id="map">

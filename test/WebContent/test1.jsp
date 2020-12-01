@@ -106,7 +106,7 @@ table {
     			$(".left_hint.row" + i).empty();
     			for(var k = 0; k < arr.length; k++) {
     				if(arr[k] != 0)
-    					$(".left_hint.row" + i).append("<span>" + arr[k] + "</span>");
+    					$(".left_hint.row" + i).append("<span> " + arr[k] + " </span>");
     			}
     		}
 		    for(var i = 1; i < $(".row0").children().length; i++) {
